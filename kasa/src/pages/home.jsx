@@ -2,23 +2,28 @@ import logo_kasa from '../assets/logo_kasa.png';
 import background_logo from '../assets/background_bandeau.png';
 import data_logements from '../data/logements.json';
 import Slideshow from "../components/slideshow";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 export default function Home() {
     return (
       
       <>
-    ’
+    
 
         <div className="bandeau">
           
                 <h1 >Chez vous, partout et ailleurs</h1> 
-                <Background />
+                <Background  />
           
         </div>
-         <main>
-         {/* <Logements />  */}
-      <Slideshow />
+         {/* <main> */}
+         <div>
+         <Logements /> 
+         </div>
+      {/* <Slideshow /> */}
        
-    </main> 
+    {/* </main>  */}
 
       </>
     );
@@ -50,6 +55,7 @@ function Background() {
             display:"block",
             
           }}
+          
         />
     
     );
@@ -62,11 +68,24 @@ function Background() {
   ];
   
 function Logements() {
+  const navigate = useNavigate();
+  const handleClick = (id) => {
+    navigate(`/image/${id}`);
+  };
     const listItems = data_logements.map(product =>
-       
-       <a className="card" href="#">
-         <article >
-          <img  src={product.cover}  alt=""/> 
+   
+      //  <a className="card" href="#">
+      //    <article >
+      //     <img   onClick={() => handleClick(1)} 
+      //   style={{ cursor: 'pointer', width: '200px' }}  src={product.cover}  alt=""/> 
+      <a className="card" key={product.id} href="#">
+      <article>
+        <img 
+          onClick={() => handleClick(product.id)} 
+          // style={{ cursor: 'pointer', width: '200px' }}  
+          src={product.cover}  
+          alt={product.title}
+        /> 
          <h2> {product.title}</h2>
          </article> 
            

@@ -1,5 +1,6 @@
 import logo_kasa from './assets/logo_kasa.png';
 import { Outlet } from 'react-router-dom';
+import footer_logo_kasa from './assets/footer_logo.png';
 export default function Root() {
     return (
       <>
@@ -23,8 +24,9 @@ export default function Root() {
   
 </main>
 <footer>
-            <h2>Kasa</h2>
-            <p>2020 Kasa. All rights reserved</p>
+            <img src={footer_logo_kasa} alt="" />
+            {/* <h2>Kasa</h2> */}
+            <p>© 2020 Kasa. All rights reserved</p>
         </footer>
 
       </>

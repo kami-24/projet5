@@ -14,7 +14,7 @@ header {
 }
 
 .logo img {
-    width: 100px;
+    width: 180px;
 }
 
 nav ul {
@@ -28,7 +28,13 @@ nav ul {
 nav a {
     text-decoration: none;
     color: black;
-    font-weight: bold;
+    /* font-weight: bold; */
+}
+
+.nav a:hover {
+  color: #0065fc;
+  border-top: 2px solid #a31111;
+  padding-top: 10px;
 }
 
 .bandeau {
@@ -45,8 +51,14 @@ nav a {
     /* justify-content: center; */
     /* align-items: center; */
     /* text-align: center; */
-    margin-left: 700px;
-    padding-top: 50px;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -70%); 
+
+    color: #fff; 
+    padding: 10px 20px; 
+    font-size: 40px; 
+    text-align: center;
 }
 .bandeau img {
     width: 100%;
@@ -56,6 +68,13 @@ nav a {
     margin-left: 50px;
     margin-right: 50px;
 }
+
+.details{
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+
 /*
 .bandeau .overlay {
     background-color: rgba(0, 0, 0, 0.5);
@@ -72,27 +91,34 @@ nav a {
 .cards {
     
     margin-top: 50px;
-   /* display: flex;
-    flex-wrap: wrap;*/
     display: grid;
-    grid-template-columns: 200px 200px 200px;
-    gap:20px;
-
-  /*  gap: 20px;
-    padding: 20px;*/
-   /* justify-content: space-between;*/
+    /* grid-template-columns: 200px 200px 200px; */
+    gap: 20px;
+    /* justify-content: space-between; */
+    margin: 0 auto;
+    /* width: 50%; */
+    margin-top: 50px;
+    background: #ede3e3;
+    border-radius: 20px;
+    /* flex-wrap: wrap; */
+    margin-left: 50px;
+    margin-right: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 50px;
 }
 
 .card {
     background-color: #ff6b6b;
     border-radius: 10px;
-    padding: 20px;
-   color: white;
- /*   display: flex;
-    align-items: center;
-    justify-content: center;*/
-    height: 150px;
+    /* padding: 20px; */
+    color: white;
+    height: 350px;
     text-decoration: none;
+    width: 350px;
+    /* margin-left: 30px; */
+    /* width: 50%; */
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
 .card article{
@@ -107,17 +133,19 @@ nav a {
 
 .card article img {
     width: 100%;
-    height: 120px;
+     height: 220px; 
     object-fit: cover;
     border-radius: 25px;
     border: none;
-   /* margin-top: 7px;*/
+    /* margin-top: 7px; */
     box-sizing: border-box;
-    /*padding-left: 7px;
-    padding-right: 7px;*/
+    margin-top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .card article h2 {
-    font-size:10px;
+    font-size: 20px;
+    margin-left: 10px;
   
 
 }
@@ -221,3 +249,21 @@ details[open] summary::after {
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
   }
+
+footer {
+  
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+
+
+  }
+  
+footer p {
+  
+    color: white;
+
+  }
+  
