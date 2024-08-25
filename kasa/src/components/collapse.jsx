@@ -1,25 +1,43 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useRef, useEffect } from "react";
 
-export default function Collapse({title,content}) {
-    // const [count, trigerCollapse] = useState();
+export default function Collapse({ title, content }) {
+  const [isOpen, setIsOpen] = useState(false); // L'état pour savoir si le contenu est ouvert ou fermé
+  const [height, setHeight] = useState(0);
+  const contentRef = useRef(null);
+  useEffect(() => {
+    if (isOpen) {
+      setHeight(contentRef.current.scrollHeight);
+    } else {
+      setHeight(0);
+    }
+  }, [isOpen]);
 
-    const [isOpen, setIsOpen] = useState(false); // L'état pour savoir si le contenu est ouvert ou fermé
+  const toggleCollapse = () => {
+    setIsOpen(!isOpen); // Inverse l'état actuel
+  };
 
-    const toggleCollapse = () => {
-      setIsOpen(!isOpen); // Inverse l'état actuel
-    };
-
-    return (
-
-<div className="details">
-{/* il faut un h1 quelque part  */}
-{/* <h2 className="summary">{title}<FontAwesomeIcon onClick={() => console.log("TEST12")} icon={faChevronUp} /></h2> */}
-<h2 className="summary" onClick={toggleCollapse} >{title}      <FontAwesomeIcon icon={isOpen ? faChevronDown : faChevronUp} /> </h2>
-{/* <p>{content}</p> */}
-{isOpen && <p>{content}</p>} {/* Affiche le contenu seulement si isOpen est vrai */}
-</div>
-    
-    );
-  }
+  return (
+    <div className="details">
+      <h2 className="summary" onClick={toggleCollapse}>
+        {title}{" "}
+        <FontAwesomeIcon
+          icon={faChevronUp}
+          className={`chevron-icon ${isOpen ? "rotate" : ""}`}
+        />
+      </h2>
+      <div
+        className="content"
+        ref={contentRef}
+        style={{
+          height: `${height}px`,
+          overflow: "hidden",
+          transition: "height 0.3s ease",
+        }}
+      >
+        <p>{content}</p>
+      </div>
+    </div>
+  );
+}

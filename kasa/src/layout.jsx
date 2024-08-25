@@ -1,58 +1,31 @@
-import logo_kasa from './assets/logo_kasa.png';
-import { Outlet } from 'react-router-dom';
-import footer_logo_kasa from './assets/footer_logo.png';
+import logo_kasa from "./assets/logo_kasa.png";
+import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+import footer_logo_kasa from "./assets/footer_logo.png";
+import Logo from "./components/logo";
 export default function Root() {
-    return (
-      <>
-  <header>
+  return (
+    <>
+      <header>
         <div className="logo">
-         <Logo /> 
+          <Logo img_path={logo_kasa} img_name={"logo kasa"} />
         </div>
         <nav>
-            <ul>
-
-                <li><a href="#">Accueil</a></li>
-                <li>
-              <a href={`/contacts/1`}>A Propos</a>
+          <ul>
+            <Link to="/">Accueil</Link>
+            <li>
+              <a href={`/a-propos`}>A Propos</a>
             </li>
-            </ul>
+          </ul>
         </nav>
-    </header>
-<main>
-    <Outlet/>    
-
-  
-</main>
-<footer>
-            <img src={footer_logo_kasa} alt="" />
-            {/* <h2>Kasa</h2> */}
-            <p>© 2020 Kasa. All rights reserved</p>
-        </footer>
-
-      </>
-    );
-  }
-
-
-  const logo_data = {
-    name: 'logo kasa',
-    imageUrl: logo_kasa,
-    //imageSize: 90,
-  };
-  
-  function Logo() {
-    return (
-  
-  
-        <img
-          className="logo"
-          src={logo_data.imageUrl}
-          alt={'Photo de ' + logo_data.name}
-          style={{
-            width: logo_data.imageSize,
-            height: logo_data.imageSize
-          }}
-        />
-    
-    );
-  }
+      </header>
+      <main>
+        <Outlet />
+      </main>
+      <footer>
+        <img src={footer_logo_kasa} alt="" />
+        <p>© 2020 Kasa. All rights reserved</p>
+      </footer>
+    </>
+  );
+}

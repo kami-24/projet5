@@ -1,31 +1,54 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import React, { useState, useEffect } from 'react';
-import data_logements from '../data/logements.json';
-export default function Slideshow({}) {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
 
-    const [count, setCount] = useState(0);
+import {
+  faChevronRight,
+  faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons";
+import "./slideshow.css";
 
-    function handleClick() {
-      console.log("HELLO")
-    
-    }
+export default function Slideshow({ logement }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const totalImages = logement.pictures.length;
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? totalImages - 1 : prevIndex - 1,
+    );
+  };
 
-    const listItems = data_logements.map(product =>
-        <a onClick={handleClick} className="card" href="#">
-          <article >
-           <img  src={product.cover}  alt=""/> 
-          <h2> {product.title}</h2>
-          </article> 
-     </a>
-     );
-   
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === totalImages - 1 ? 0 : prevIndex + 1,
+    );
+  };
 
+  return (
+    <>
+      <div>
+        <div>
+          <img
+            src={logement.pictures[currentIndex]}
+            alt={`Image ${currentIndex + 1} de ${logement.title}`}
+            className="img_slideshow"
+          />
+          {totalImages > 1 && (
+            <p className="counter">
+              {currentIndex + 1} / {totalImages}
+            </p>
+          )}
+          {totalImages > 1 && (
+            <>
+              <button onClick={prevSlide} className="left_arrow">
+                <FontAwesomeIcon icon={faChevronLeft} size="2x" />
+              </button>
 
-    return (
-        <>
-        <section className="cards" >{listItems}</section> 
-              
-        </>
-            );
-  }
+              <button onClick={nextSlide} className="right_arrow">
+                <FontAwesomeIcon icon={faChevronRight} size="2x" />
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+    </>
+  );
+}

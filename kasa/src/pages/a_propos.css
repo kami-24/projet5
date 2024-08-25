@@ -1,0 +1,9 @@
+.details {
+  margin-left: 120px;
+  margin-right: 120px;
+}
+.details .content {
+  transition: height 0.03s ease;
+  overflow: hidden;
+  background-color: rgb(255, 245, 245);
+}
