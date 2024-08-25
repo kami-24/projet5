@@ -15,10 +15,11 @@ export default function Home() {
       <div>
         <section className="cards">
           {data_logements.map((product) => (
-            <Card logement={product} />
+            <Card key={product.id} logement={product} />
           ))}
         </section>
       </div>
     </>
   );
 }
+
