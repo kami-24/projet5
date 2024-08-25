@@ -5,7 +5,7 @@ import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import "./slideshow.css";
+import "./slideshow.scss";
 
 export default function Slideshow({ logement }) {
   const [currentIndex, setCurrentIndex] = useState(0);

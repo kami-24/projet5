@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Collapse from "../components/collapse";
 import Slideshow from "../components/slideshow";
-import "./logement.css";
+import "./logement.scss";
 import { useNavigate } from "react-router-dom";
 function Logement() {
   const { id } = useParams();

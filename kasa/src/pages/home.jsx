@@ -2,7 +2,7 @@ import banner_home from "../assets/banner_home.png";
 import data_logements from "../data/logements.json";
 import React from "react";
 import Card from "../components/cards";
-import "./home.css";
+import "./home.scss";
 import ImageBanner from "../components/image_banner";
 
 export default function Home() {

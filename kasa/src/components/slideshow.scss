@@ -1,0 +1,51 @@
+// Variables
+$arrow-size: 40px;
+$arrow-position-top: 44%;
+$arrow-offset: 10px;
+$counter-font-size: 20px;
+$counter-padding: 10px 20px;
+$counter-text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+
+// Mixins
+@mixin arrow-styles($direction) {
+  position: absolute;
+  top: $arrow-position-top;
+  #{$direction}: $arrow-offset;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+  font-size: $arrow-size;
+}
+
+// Styles
+.img_slideshow {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.left_arrow {
+  @include arrow-styles(left);
+}
+
+.right_arrow {
+  @include arrow-styles(right);
+}
+
+.counter {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: $counter-font-size;
+  text-shadow: $counter-text-shadow;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  padding: $counter-padding;
+}

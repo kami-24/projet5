@@ -1,7 +1,7 @@
 import Collapse from "../components/collapse";
 import banner_a_propos from "../assets/banner_a_propos.png";
 import ImageBanner from "../components/image_banner";
-import "./a_propos.css";
+import "./a_propos.scss";
 
 export default function Apropos() {
   return (
