@@ -1,9 +1,49 @@
-.details {
-  margin-left: 120px;
-  margin-right: 120px;
+.apropos_content {
+  margin-left: 130px;
+  margin-right: 130px;
+  padding-left: 14px;
 }
-.details .content {
+.apropos_content p {
+  font-family: "Montserrat";
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.apropos-collapse content {
   transition: height 0.03s ease;
   overflow: hidden;
   background-color: rgb(255, 245, 245);
+  margin-left: 130px;
+  margin-right: 130px;
+}
+
+.apropos-collapse {
+  background-color: rgba(255, 96, 96, 1);
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  border-radius: 5px;
+  margin-left: 130px;
+  margin-right: 130px;
+  font-family: "Montserrat";
+}
+
+@media screen and (max-width: 767.999px) {
+  .apropos_content {
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: 0px;
+  }
+
+  .apropos-collapse {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 }

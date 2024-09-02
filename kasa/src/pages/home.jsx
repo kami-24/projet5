@@ -12,14 +12,12 @@ export default function Home() {
         <h1>Chez vous, partout et ailleurs</h1>
         <ImageBanner img_path={banner_home} img_name={"photo falaise mer"} />
       </div>
-      <div>
-        <section className="cards">
-          {data_logements.map((product) => (
-            <Card key={product.id} logement={product} />
-          ))}
-        </section>
-      </div>
+
+      <section className="cards">
+        {data_logements.map((logement) => (
+          <Card key={logement.id} logement={logement} />
+        ))}
+      </section>
     </>
   );
 }
-

@@ -7,6 +7,7 @@ import Collapse from "../components/collapse";
 import Slideshow from "../components/slideshow";
 import "./logement.scss";
 import { useNavigate } from "react-router-dom";
+
 function Logement() {
   const { id } = useParams();
   const logement = data_logements.find((item) => item.id === id);
@@ -64,9 +65,15 @@ function Logement() {
         </div>
       </div>
       <div className="desc_equip">
-        <Collapse title="Description" content={logement.description} />
         <Collapse
-          title="Equipements"
+          title="Description"
+          content={logement.description}
+          customClass="logement-collapse"
+          customClassContent="logement_content"
+        />
+        <Collapse
+          title="Équipements"
+          customClass="logement-collapse"
           content={
             <>
               {logement.equipments.map((equipment, index) => (
@@ -76,6 +83,7 @@ function Logement() {
               ))}
             </>
           }
+          customClassContent="logement_content"
         />
       </div>
     </>

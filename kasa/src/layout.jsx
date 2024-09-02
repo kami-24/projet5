@@ -3,6 +3,8 @@ import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import footer_logo_kasa from "./assets/footer_logo.png";
 import Logo from "./components/logo";
+import "./index.scss";
+
 export default function Root() {
   return (
     <>
@@ -14,7 +16,8 @@ export default function Root() {
           <ul>
             <Link to="/">Accueil</Link>
             <li>
-              <a href={`/a-propos`}>A Propos</a>
+              {/* <a href={`/a-propos`}>A Propos</a> */}
+              <Link to="/a-propos">A Propos</Link>
             </li>
           </ul>
         </nav>

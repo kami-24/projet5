@@ -1,6 +1,6 @@
 import Layout from "./layout.jsx";
 import { createBrowserRouter } from "react-router-dom";
-import Root from "./pages/home.jsx";
+import HomePage from "./pages/home.jsx";
 import ErrorPage from "./error-page.jsx";
 import Apropos from "./pages/a_propos.jsx";
 import Logement from "./pages/logement.jsx";
@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
 
-        element: <Root />,
+        element: <HomePage />,
       },
       {
         path: "a-propos",
@@ -26,7 +26,8 @@ export const router = createBrowserRouter([
         element: <ErrorPage />,
       },
       {
-        path: "/image/:id",
+        // path: "/image/:id",
+        path: "/logement/:id",
         element: <Logement />,
       },
     ],

@@ -25,7 +25,7 @@ export default function Slideshow({ logement }) {
   return (
     <>
       <div>
-        <div>
+        <div className="slideshow_container">
           <img
             src={logement.pictures[currentIndex]}
             alt={`Image ${currentIndex + 1} de ${logement.title}`}

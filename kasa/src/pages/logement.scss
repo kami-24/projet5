@@ -1,11 +1,19 @@
 .container_under_slideshow {
   display: flex;
   justify-content: space-between;
+  margin-top: 15px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .left_container {
   h1 {
-    color: red;
+    color: rgba(255, 96, 96, 1);
+    font-weight: normal;
+  }
+
+  p {
+    margin-top: -10px;
   }
 }
 
@@ -14,7 +22,10 @@
   justify-content: space-between;
 
   p {
-    color: red;
+    color: rgba(255, 96, 96, 1);
+    margin-right: 10px;
+    font-size: 18px;
+    font-family: "Montserrat";
   }
 
   img {
@@ -30,16 +41,27 @@
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 10px;
 }
 
 .tags {
   span {
-    padding: 5px 10px;
-    background-color: #ff6060;
+    padding: 5px 20px;
+    background-color: rgba(255, 96, 96, 1);
     color: white;
     border-radius: 30px;
     font-size: 14px;
     margin-right: 10px;
+    font-family: "Montserrat";
+    font-weight: bold;
+  }
+}
+.stars {
+  svg {
+    margin-left: 10px;
+    font-size: 17px;
   }
 }
 
@@ -47,17 +69,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
-}
-
-.details {
-  margin-left: 0px;
-  margin-right: 0px;
-
-  .content {
-    transition: height 0.03s ease;
-    overflow: hidden;
-    background-color: rgb(255, 245, 245);
-  }
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 10px;
 }
 
 footer {
@@ -66,4 +80,55 @@ footer {
 
 .equipements {
   display: block;
+}
+
+.logement-collapse {
+  background-color: rgba(255, 96, 96, 1);
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  border-radius: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-family: "Montserrat";
+}
+
+.desc_equip content {
+  transition: height 0.03s ease;
+  overflow: hidden;
+  background-color: rgba(255, 96, 96, 1);
+}
+
+.left_container {
+  font-family: "Montserrat";
+}
+
+@media screen and (max-width: 767.999px) {
+  .desc_equip {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .container_tags_stars {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stars {
+    margin-top: 30px;
+  }
+
+  .right_container {
+    img {
+      order: 1;
+    }
+  }
 }
