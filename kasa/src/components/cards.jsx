@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 export default function Card({ logement }) {
   const navigate = useNavigate();
   const handleClick = (id) => {
-    // navigate(`/image/${id}`);
     navigate(`/logement/${id}`);
   };
 
@@ -17,7 +16,6 @@ export default function Card({ logement }) {
     >
       <article>
         <img
-          // onClick={() => handleClick(logement.id)}
           src={logement.cover}
           alt={logement.title}
         />

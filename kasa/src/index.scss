@@ -50,37 +50,16 @@ nav {
 
 .card {
   background-color: rgba(255, 96, 96, 1);
-  //   background: linear-gradient(
-  //     to bottom, /* ou to right, selon la direction souhaitée */
-  //     rgba(255, 99, 99, 1),  /* Rouge clair en haut */
-  //     rgba(255, 69, 69, 1),  /* Rouge légèrement plus foncé au milieu */
-  //     rgba(255, 59, 59, 1),  /* Rouge encore plus foncé vers le bas */
-  //     rgba(255, 50, 50, 1)   /* Rouge le plus foncé à la fin */
-  // );
   border-radius: 10px;
   color: white;
-  // height: 350px;
   text-decoration: none;
-  // margin: 0 auto;
-  // margin-top: 40px;
-  // width: 100%;
   overflow: hidden;
 
   article {
-    // border-radius: 25px;
-    // border: none;
-    // padding-bottom: 5px;
-
     img {
       width: 100%;
       height: 220px;
       object-fit: cover;
-      // // border-radius: 25px;
-      // border: none;
-      // box-sizing: border-box;
-      // // margin-top: 40px;
-      // padding-left: 10px;
-      // padding-right: 10px;
     }
 
     h2 {

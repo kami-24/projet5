@@ -26,7 +26,6 @@ export const router = createBrowserRouter([
         element: <ErrorPage />,
       },
       {
-        // path: "/image/:id",
         path: "/logement/:id",
         element: <Logement />,
       },

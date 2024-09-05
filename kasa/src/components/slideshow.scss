@@ -11,7 +11,6 @@ $counter-text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
   position: absolute;
   top: $arrow-position-top;
   #{$direction}: $arrow-offset;
-  // transform: translateY(50%);
   background: none;
   border: none;
   color: white;
@@ -38,7 +37,6 @@ $counter-text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
 
 .counter {
   position: absolute;
-  // bottom: 20px;
   width: 100%;
   text-align: center;
   color: white;
